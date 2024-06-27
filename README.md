@@ -216,7 +216,12 @@ Test 1: draw_text.py
 
 https://github.com/pyglet/pyglet/commit/423262dba9547773da371a9ad5f36e63e7455f75
 
+
 <img width="889" alt="Screenshot 2024-06-27 at 23 23 51" src="https://github.com/sannedb/pyglet/assets/55755724/98e650ab-c085-488a-9a6d-651ed10a2647">
+
+After:
+<img width="264" alt="Screenshot 2024-06-28 at 00 52 57" src="https://github.com/sannedb/pyglet/assets/55755724/547fea79-8421-4d0f-abc0-1a32ec27b3f9">
+
 
 ![image](https://github.com/sannedb/pyglet/assets/55755724/ba8652a2-44c2-4cf7-a884-0826c26a03a8)
 ![image](https://github.com/sannedb/pyglet/assets/55755724/616d6fa9-9361-483a-99a3-057d033b5139)
@@ -229,6 +234,10 @@ Test 2: tear_down.py
 https://github.com/pyglet/pyglet/commit/cbda5d030a0bf155ae8cc6e51892bb93cca1209c
 
 <img width="883" alt="Screenshot 2024-06-27 at 23 24 19" src="https://github.com/sannedb/pyglet/assets/55755724/98bce27d-9180-48c3-87af-429bf071526a">
+
+After:
+<img width="241" alt="Screenshot 2024-06-28 at 00 53 16" src="https://github.com/sannedb/pyglet/assets/55755724/82344e74-7884-4eb9-8e58-4bd1fc550037">
+
 ![image](https://github.com/sannedb/pyglet/assets/55755724/6c1b714e-b6e5-4f2f-8598-2c4dbd264586)
 
 ![image](https://github.com/sannedb/pyglet/assets/55755724/22bad205-e936-4b0d-a86e-2314665bf7f8)
