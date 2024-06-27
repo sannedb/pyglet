@@ -68,7 +68,6 @@ https://github.com/sannedb/pyglet/commit/68bec1593026c784580dc821d2a7b42e9738bdf
 
 normalize.py
 
-<Provide the same kind of information provided for Function 1>
 https://github.com/sannedb/pyglet/commit/0db04da130f651e0849d77826ba2a974ef476993
 
 <img src="https://github.com/sannedb/pyglet/assets/92684792/f30ac9c5-c229-4e33-8fa1-26c7219c24b6">
