@@ -50,6 +50,10 @@ class EventLoopFixture(InteractiveFixture):
         "handle_answer_4": False
     }
 
+    def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} {'was hit' if hit else 'was not hit'}")
+
     def __init__(self, request):
         super().__init__(request)
         self._request = request
@@ -142,10 +146,6 @@ class EventLoopFixture(InteractiveFixture):
             self.branch_coverage["handle_answer_4"] = True
             pytest.exit('Tester requested to quit')
 
-    def print_coverage():
-        for branch, hit in EventLoopFixture.branch_coverage.items():
-            print(f"{branch} was {'hit' if hit else 'not hit'}")
-
     def ask_question_no_window(self, description=None):
         """Ask a question to verify the current test result. Uses the console or an external gui
         as no window is available."""
@@ -214,11 +214,6 @@ def test_question_skip(event_loop):
     event_loop.create_window()
     event_loop.ask_question('Please press S to skip the rest of this test.')
     pytest.fail('You should have pressed S')
-
-    
-def print_coverage():
-    for branch, hit in branch_coverage.items():
-        print(f"{branch} {'was hit' if hit else 'was not hit'}")
 
 
 # Mocking the 'request' and 'pytest' needed for the original fixture setup
