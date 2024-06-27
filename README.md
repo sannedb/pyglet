@@ -251,6 +251,8 @@ The coverage went from 20% to 71%
 <img width="855" alt="Screenshot 2024-06-27 at 13 03 59" src="https://github.com/sannedb/pyglet/assets/90255780/398aa74d-b022-4457-91ab-9afd48c64fa5">
 
 <Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+<img width="737" alt="Screenshot 2024-06-27 at 23 26 48" src="https://github.com/sannedb/pyglet/assets/90255780/08615708-4bf4-4156-b631-184a203e79e8">
+
 
 ## Statement of individual contributions
 
