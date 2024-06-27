@@ -46,7 +46,7 @@ class EventLoopFixture(InteractiveFixture):
         "draw_text_1": False,  # text_batch is not None
         "draw_text_2": False,  # text_batch is None
         "tear_down_1": False,  # window is not None
-        "tear_down_2": False   # window is None
+        "tear_down_2": False,   # window is None
         "handle_answer_4": False
     }
 
