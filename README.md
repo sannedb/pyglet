@@ -217,7 +217,7 @@ https://github.com/pyglet/pyglet/commit/423262dba9547773da371a9ad5f36e63e7455f75
 
 
 <img width="889" alt="Screenshot 2024-06-27 at 23 23 51" src="https://github.com/sannedb/pyglet/assets/55755724/98e650ab-c085-488a-9a6d-651ed10a2647">
-
+<br/>
 After:
 <img width="264" alt="Screenshot 2024-06-28 at 00 52 57" src="https://github.com/sannedb/pyglet/assets/55755724/547fea79-8421-4d0f-abc0-1a32ec27b3f9">
 
@@ -233,7 +233,7 @@ Test 2: tear_down.py
 https://github.com/pyglet/pyglet/commit/cbda5d030a0bf155ae8cc6e51892bb93cca1209c
 
 <img width="883" alt="Screenshot 2024-06-27 at 23 24 19" src="https://github.com/sannedb/pyglet/assets/55755724/98bce27d-9180-48c3-87af-429bf071526a">
-
+<br/>
 After:
 <img width="241" alt="Screenshot 2024-06-28 at 00 53 16" src="https://github.com/sannedb/pyglet/assets/55755724/82344e74-7884-4eb9-8e58-4bd1fc550037">
 
