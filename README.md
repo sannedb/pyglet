@@ -1,154 +1,155 @@
-[![pypi](https://badge.fury.io/py/pyglet.svg)](https://pypi.python.org/pypi/pyglet) [![rtd](https://readthedocs.org/projects/pyglet/badge/?version=latest)](https://pyglet.readthedocs.io) [![PyTest](https://github.com/pyglet/pyglet/actions/workflows/unittests.yml/badge.svg)](https://github.com/pyglet/pyglet/actions/workflows/unittests.yml)
+# Report for Assignment 1
 
-![logo_large.png](https://github.com/pyglet/pyglet/blob/54a8c8b7e701b1692c6a10dd80f94ec837c27bd3/examples/opengl/pyglet.png)
+## Project chosen
 
-# pyglet
+Name: pyglet
 
-*pyglet* is a cross-platform windowing and multimedia library for Python, intended for developing games
-and other visually rich applications. It supports Windowing, input event handling, Controllers & Joysticks,
-OpenGL graphics, loading images and videos, and playing sounds and music. *pyglet* works on Windows, OS X and Linux.
+URL: https://github.com/pyglet/pyglet
 
-> :exclamation: :exclamation: A major pyglet update has just been released (v2.0). This brings many 
-> new exciting features, but also some necessary breaking changes. If your game/application has suddenly 
-> stopped working, please read the [migration section in the documentation](https://pyglet.readthedocs.io/en/latest/programming_guide/migration.html)
-> The previous version of pyglet is tracked in the `pyglet-1.5-maintenance` branch.
-> **If you want to do a pull request for the previous release, please target the appropriate branch**. 
+Number of lines of code and the tool used to count it: 100531, calculated by Lizard:
+<img width="640" alt="Screenshot 2024-06-27 at 11 42 34" src="https://github.com/sannedb/pyglet/assets/90255780/c267df1a-7ac9-4dfb-917d-d4fce0d34ae4">
 
-> :exclamation: `pyglet.graphics.draw` and `pyglet.graphics.draw_indexed` will be removed
-> in pyglet v2.1. The `shapes` module is an alternative for drawing simple shapes. 
+Programming language: Python
 
-* pyglet [documentation]
-* pyglet on [PyPI]
-* pyglet [discord] server
-* pyglet [mailing list]
-* pyglet [issue tracker]
-* pyglet [website]
+## Coverage measurement
 
-pyglet has an active developer and user community.  If you find a bug or a problem with the documentation,
-please [open an issue](https://github.com/pyglet/pyglet/issues).
-Anyone is welcome to join our [discord] server where a lot of the development discussion is going on.
-It's also a great place to ask for help.
+### Existing tool
 
-Some features of pyglet are:
+<Inform the name of the existing tool that was executed and how it was executed>
 
-* **No external dependencies or installation requirements.** For most application and game requirements, *pyglet*
-  needs nothing else besides Python, simplifying distribution and installation. It's easy to package and distribute
-  your project with [Nuitka](https://nuitka.net) or [PyInstaller](https://pyinstaller.org). 
-* **Take advantage of multiple windows and multi-monitor desktops.** *pyglet* allows you to use multiple
-  platform-native windows, and is fully aware of multi-monitor setups for use with fullscreen games.
-* **Load images, sound, music and video in almost any format.** *pyglet* can optionally use FFmpeg to play back
-  audio formats such as MP3, OGG/Vorbis and WMA, and video formats such as MPEG2, H.264, H.265, WMV and Xvid.
-  Without FFmpeg, *pyglet* contains built-in support for standard formats such as wav, png, bmp, and others.
-* **pyglet is written entirely in pure Python**, and makes use of the *ctypes* module to interface with system
-  libraries. You can modify the codebase or make a contribution without any second language compilation steps or
-  compiler setup. Despite being pure Python, *pyglet* has excellent performance thanks to advanced batching for
-  drawing thousands of objects.
-* **pyglet is provided under the BSD open-source license**, allowing you to use it for both commercial and other
-  open-source projects with very little restriction.
+<Show the coverage results provided by the existing tool with a screenshot>
 
-## Requirements
+### Your own coverage tool
 
-pyglet runs under Python 3.8+. Being written in pure Python, it also works on other Python interpreters such as PyPy. Supported platforms are:
+<The following is supposed to be repeated for each group member>
 
-* Windows 7 or later
-* Mac OS X 10.3 or later
-* Linux, with the following libraries (most recent distributions will have
-  these in a default installation):
-  * OpenGL and GLX
-  * GDK 2.0+ or Pillow (required for loading images other than PNG and BMP)
-  * OpenAL or Pulseaudio (required for playing audio)
+Sanne
 
-**As of pyglet 2.0, OpenGL 3.3+ is required**. 
+<Function 1 name>
 
-To play a large variety of compressed audio and video files,
-pyglet can optionally take advantage of [FFmpeg](https://ffmpeg.org/).
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
-## Installation
+<Provide a screenshot of the coverage results output by the instrumentation>
 
-pyglet is installable from PyPI:
+<Function 2 name>
 
-    pip install --upgrade --user pyglet
+<Provide the same kind of information provided for Function 1>
 
-## Installation from source
+Sepaanta
 
-If you're reading this `README` from a source distribution, you can install pyglet with:
+<Function 1 name>
 
-    pip install --upgrade --user .
-    # or
-    python setup.py install --user
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
-You can also install the latest development version directly from Github:
+<Provide a screenshot of the coverage results output by the instrumentation>
 
-    pip install --upgrade --user https://github.com/pyglet/pyglet/archive/master.zip
+<Function 2 name>
 
-For local development install pyglet in editable mode:
+<Provide the same kind of information provided for Function 1>
 
-```bash
-# with pip
-pip install -e .
-# with setup.py
-python setup.py develop
-```
+Emilija
 
-There are no compilation steps during the installation; if you prefer,
-you can simply add this directory to your `PYTHONPATH` and use pyglet without
-installing it. You can also copy pyglet directly into your project folder.
+<Function 1 name>
 
-## Contributing
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
-**A good way to start contributing to a component of pyglet is by its documentation**. When studying the code you
-are going to work with, also read the associated docs. If you don't understand the code with the help of the docs,
-it is a sign that the docs should be improved. If you wish to make large changes to any part of pyglet, it's always
-a good idea to reach out for feedback first. This can avoid wasted effort in cases where someone is already working
-on something similar, or if your idea can't be accepted for any reason. 
+<Provide a screenshot of the coverage results output by the instrumentation>
 
-A basic outline of how to a contribution is as follows:
+<Function 2 name>
 
-* Fork the [official repository](https://github.com/pyglet/pyglet/fork).
-* In your fork, checkout the branch you wish to contribute to (such as *pyglet-1.5-maintenance*).
-* Apply your changes to your fork.
-* Submit a [pull request](https://github.com/pyglet/pyglet/pulls) describing the changes you have made.
-* Alternatively you can create a patch and submit it to the issue tracker.
+<Provide the same kind of information provided for Function 1>
 
-When making a pull request, check that you have addressed its respective documentation, both within the code docstrings
-and the programming guide (if applicable). It is very important to all of us that the documentation matches the latest
-code and vice-versa.
+Rūta
 
-Consequently, an error in the documentation, either because it is hard to understand or because it doesn't match the
-code, is a bug that deserves to be reported on a ticket.
+<Function 1 name>
 
-## Building Docs
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
-    pip install -r doc/requirements.txt
-    python setup.py build_sphinx
+<Provide a screenshot of the coverage results output by the instrumentation>
 
-Please check [the README.md file in the doc directory](doc/README.md) for more details.
+<Function 2 name>
 
-## Testing
+<Provide the same kind of information provided for Function 1>
 
-pyglet makes use of pytest for its test suite.
+## Coverage improvement
 
-```bash
-pip install -r tests/requirements.txt --user
-# Only run unittests
-pytest tests/unit
-```
+### Individual tests
 
-Please check the [testing section in the development guide](https://pyglet.readthedocs.io/en/latest/internal/testing.html)
-for more information about running and writing tests.
+<The following is supposed to be repeated for each group member>
 
-## Contact
+Sanne
 
-pyglet is developed by many individual volunteers, and there is no central point of contact. If you have a question
-about developing with pyglet, or you wish to contribute, please join the [mailing list], [discord] server, or [subreddit].
+<Test 1>
 
-For legal issues, please contact [Alex Holkner](mailto:Alex.Holkner@gmail.com).
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
 
-[discord]: https://discord.gg/QXyegWe
-[mailing list]: http://groups.google.com/group/pyglet-users
-[subreddit]: https://www.reddit.com/r/pyglet/
-[documentation]: https://pyglet.readthedocs.io
-[wiki]:  https://github.com/pyglet/pyglet/wiki
-[pypi]:  https://pypi.org/project/pyglet/
-[website]: http://pyglet.org/
-[issue tracker]: https://github.com/pyglet/pyglet/issues
+<Provide a screenshot of the old coverage results (the same as you already showed above)>
+
+<Provide a screenshot of the new coverage results>
+
+<State the coverage improvement with a number and elaborate on why the coverage is improved>
+
+<Test 2>
+
+<Provide the same kind of information provided for Test 1>
+
+Sepaanta
+
+<Test 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
+
+<Provide a screenshot of the old coverage results (the same as you already showed above)>
+
+<Provide a screenshot of the new coverage results>
+
+<State the coverage improvement with a number and elaborate on why the coverage is improved>
+
+<Test 2>
+
+<Provide the same kind of information provided for Test 1>
+
+Emilija
+
+<Test 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
+
+<Provide a screenshot of the old coverage results (the same as you already showed above)>
+
+<Provide a screenshot of the new coverage results>
+
+<State the coverage improvement with a number and elaborate on why the coverage is improved>
+
+<Test 2>
+
+<Provide the same kind of information provided for Test 1>
+
+Rūta
+
+<Test 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
+
+<Provide a screenshot of the old coverage results (the same as you already showed above)>
+
+<Provide a screenshot of the new coverage results>
+
+<State the coverage improvement with a number and elaborate on why the coverage is improved>
+
+<Test 2>
+
+<Provide the same kind of information provided for Test 1>
+
+### Overall
+
+<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
+
+<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+
+## Statement of individual contributions
+
+Sanne: Tested the NLOC for this document, ran the coverage tool for this document, instrumented and tested coverage for get_document and handle_answers
+Sepaanta: Found the project, ran the initial coverage test, ...
+Emilija: Ran the initial NLOC check, ...
+Rūta: ...
