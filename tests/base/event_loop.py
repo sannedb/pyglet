@@ -42,6 +42,11 @@ class EventLoopFixture(InteractiveFixture):
         "handle_answer_1": False,
         "handle_answer_2": False,
         "handle_answer_3": False,
+        "handle_answer_4": False,
+        "draw_text_1": False,  # text_batch is not None
+        "draw_text_2": False,  # text_batch is None
+        "tear_down_1": False,  # window is not None
+        "tear_down_2": False   # window is None
         "handle_answer_4": False
     }
 
@@ -56,8 +61,11 @@ class EventLoopFixture(InteractiveFixture):
 
     def tear_down(self):
         if self.window:
+            self.branch_coverage["tear_down_1"] = True
             self.window.close()
             self.window = None
+        else:
+            self.branch_coverage["tear_down_2"] = True
 
     def create_window(self, **kwargs):
         combined_kwargs = {}
@@ -134,6 +142,7 @@ class EventLoopFixture(InteractiveFixture):
             self.branch_coverage["handle_answer_4"] = True
             pytest.exit('Tester requested to quit')
 
+    def print_coverage(self):
     def print_coverage():
         for branch, hit in EventLoopFixture.branch_coverage.items():
             print(f"{branch} was {'hit' if hit else 'not hit'}")
@@ -165,7 +174,10 @@ class EventLoopFixture(InteractiveFixture):
 
     def draw_text(self):
         if self.text_batch is not None:
+            self.branch_coverage["draw_text_1"] = True
             self.text_batch.draw()
+        else:
+            self.branch_coverage["draw_text_2"] = True
 
 def test_on_key_press_pass(event_loop):
     event_loop.create_window()
@@ -243,12 +255,14 @@ print("Testing get_document when text_document is None:")
 event_loop.text_document = None 
 document = event_loop.get_document()  
 print("Document after creation:", document)
+event_loop.print_coverage()
 EventLoopFixture.print_coverage()
 
 print("Testing get_document with pre-existing document:")
 event_loop.text_document = "Pre-existing document"
 document = event_loop.get_document()
 print("Document when already exists:", document)
+event_loop.print_coverage()
 EventLoopFixture.print_coverage()
 
 
@@ -259,6 +273,10 @@ try:
     event_loop.handle_answer()
 except Exception as e:
     print("Caught exception when answer is None:", str(e))
+event_loop.print_coverage()
+
+print("\nTesting handle_answer when answer is key_fail:")
+event_loop.answer is not None
 EventLoopFixture.print_coverage()
 
 print("\nTesting handle_answer when answer is key_fail:")
@@ -267,6 +285,10 @@ try:
     event_loop.handle_answer()
 except Exception as e:
     print("Caught exception when answer is key_fail:", str(e))
+event_loop.print_coverage()
+
+print("\nTesting handle_answer when answer is key_skip:")
+event_loop.answer is not None
 EventLoopFixture.print_coverage()
 
 print("\nTesting handle_answer when answer is key_skip:")
@@ -275,6 +297,10 @@ try:
     event_loop.handle_answer()
 except Exception as e:
     print("Caught exception when answer is key_skip:", str(e))
+event_loop.print_coverage()
+
+print("\nTesting handle_answer when answer is key_quit:")
+event_loop.answer is not None
 EventLoopFixture.print_coverage()
 
 print("\nTesting handle_answer when answer is key_quit:")
@@ -283,5 +309,70 @@ try:
     event_loop.handle_answer()
 except Exception as e:
     print("Caught exception when answer is key_quit:", str(e))
+event_loop.print_coverage()
+
+# Tests for draw_text
+def test_draw_text_with_batch(event_loop):
+    event_loop.create_window()
+    event_loop.text_batch = Batch()
+    event_loop.on_draw()
+    event_loop.print_coverage()
+    assert event_loop.branch_coverage["draw_text_1"]
+
+def test_draw_text_without_batch(event_loop):
+    event_loop.create_window()
+    event_loop.text_batch = None
+    event_loop.on_draw()
+    event_loop.print_coverage()
+    assert event_loop.branch_coverage["draw_text_2"]
+
+# Additional tests to ensure comprehensive coverage
+
+def test_draw_text_after_create_text(event_loop):
+    event_loop.create_window()
+    event_loop._create_text()
+    event_loop.on_draw()
+    event_loop.print_coverage()
+    assert event_loop.branch_coverage["draw_text_1"]
+
+# Tests for tear_down
+def test_tear_down_with_window(event_loop):
+    event_loop.create_window()
+    event_loop.tear_down()
+    event_loop.print_coverage()
+    assert event_loop.branch_coverage["tear_down_1"]
+
+def test_tear_down_without_window(event_loop):
+    event_loop.tear_down()
+    event_loop.print_coverage()
+    assert event_loop.branch_coverage["tear_down_2"]
+
+print("\nTesting draw_text with text_batch:")
+event_loop.create_window()
+event_loop.text_batch = Batch()
+event_loop.on_draw()
+event_loop.print_coverage()
+
+print("\nTesting draw_text without text_batch:")
+event_loop.create_window()
+event_loop.text_batch = None
+event_loop.on_draw()
+event_loop.print_coverage()
+
+print("\nTesting draw_text after create_text:")
+event_loop.create_window()
+event_loop._create_text()
+event_loop.on_draw()
+event_loop.print_coverage()
+
+# Tests for tear_down
+print("\nTesting tear_down with window:")
+event_loop.create_window()
+event_loop.tear_down()
+event_loop.print_coverage()
+
+print("\nTesting tear_down without window:")
+event_loop.tear_down()
+event_loop.print_coverage()
 EventLoopFixture.print_coverage()
 
