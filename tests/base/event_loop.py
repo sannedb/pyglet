@@ -143,7 +143,6 @@ class EventLoopFixture(InteractiveFixture):
             pytest.exit('Tester requested to quit')
 
     def print_coverage(self):
-    def print_coverage():
         for branch, hit in EventLoopFixture.branch_coverage.items():
             print(f"{branch} was {'hit' if hit else 'not hit'}")
 
